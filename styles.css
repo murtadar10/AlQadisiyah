@@ -345,6 +345,25 @@ section {
 .wa-btn:hover {
   background: #20b857;
 }
+.cancel-btn {
+  width: 100%;
+  padding: 12px;
+  background: #666;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+.cancel-btn:hover {
+  background: #555;
+}
 
 /* --- 7. التجاوب (Mobile) --- */
 @media (max-width: 768px) {

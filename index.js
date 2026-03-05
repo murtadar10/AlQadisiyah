@@ -132,7 +132,7 @@ function closeJoinModal() {
 }
 
 function sendToWhatsapp() {
-  const myPhone = "9647733786819"; // ا
+  const myPhone = "9647711424156"; // ا
   const name = document.getElementById("wa-name").value;
   const age = document.getElementById("wa-age").value;
   const phone = document.getElementById("wa-phone").value;
