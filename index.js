@@ -4,8 +4,8 @@
 const fighters = [
   {
     id: 1,
-    name: "عايد الشمري",
-    rank: "حزام أسود (دان 2)",
+    name: "سنسي عايد ",
+    rank: "(مدرب)",
     weight: "65 كغ",
     achievements:
       "بطل المنطقة 2023 , بطل العراق 2016, بطل آسيا 2021, بطل العراق 2019",
@@ -17,16 +17,18 @@ const fighters = [
 
   {
     id: 2,
-    name: "اللاعب معتز ",
-    rank: "حزام ازرق",
-    weight: "65 كغ",
+    name: "عبد القادر ",
+    rank: "حزام بني",
+    weight: "85 كغ",
     achievements:
       "بطل المنطقة 2023 , بطل العراق 2016, بطل آسيا 2021, بطل العراق 2019",
     power: "90%",
     speed: "80%",
-    image: "images/azoz.jpg",
-    video: "images/sisei.MOV",
+    image: "images/abdulqader.jpg",
+    video: "videos/IMG_9713.MOV",
   },
+
+  
   {
     id: 3,
     name: "عبد الله راتب",
@@ -53,15 +55,15 @@ const fighters = [
   },
   {
     id: 5,
-    name: "احمد  ",
-    rank: "حزام بني",
-    weight: "95 كغ",
+    name: "اللاعب معتز ",
+    rank: "حزام ازرق",
+    weight: "65 كغ",
     achievements:
       "بطل المنطقة 2023 , بطل العراق 2016, بطل آسيا 2021, بطل العراق 2019",
     power: "90%",
     speed: "80%",
-    image: "images/abdulqader.jpg",
-    video: "images/abdulqader.mp4",
+    image: "images/azoz.jpg",
+    video: "images/sisei.MOV",
   },
   {
     id: 6,
