@@ -1,0 +1,392 @@
+/* =========================================
+   الإعدادات العامة (General Settings)
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #050505; /* لون خلفية داكن جداً واحترافي */
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden; /* لمنع ظهور شريط التمرير الأفقي */
+}
+
+html {
+    scroll-behavior: smooth; /* انتقال سلس عند الضغط على روابط القائمة */
+}
+
+/* =========================================
+   شريط التنقل (Navbar)
+========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    border-bottom: 2px solid #e63946; /* خط أحمر رفيع يعطي طابعاً قتالياً */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e63946;
+}
+
+/* =========================================
+   الواجهة الرئيسية (Hero Section)
+========================================= */
+.hero-section {
+    height: 100vh;
+    /* تأكد من إضافة صورة قتالية باسم hero-bg.jpg داخل مجلد images */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('images/hero-bg.jpg') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #e63946; /* لون أحمر ناري */
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #ddd;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #e63946;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    border: 2px solid #e63946;
+    color: #e63946;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   العناوين الرئيسية للأقسام
+========================================= */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.section-title p {
+    color: #aaa;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   البرامج التدريبية (Programs Section)
+========================================= */
+.programs-section {
+    padding: 80px 20px;
+    background-color: #0f0f0f;
+}
+
+.programs-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.program-card {
+    background: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    border-bottom: 4px solid #e63946;
+    transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-10px);
+}
+
+.program-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.program-card p {
+    color: #bbb;
+}
+
+/* =========================================
+   صالة الأبطال (Fighters Section) - التصميم الذكي
+========================================= */
+.fighters-section {
+    padding: 80px 20px;
+    background-color: #050505;
+}
+
+.fighters-grid {
+    display: grid;
+    /* هذا هو السطر السحري الذي سيصغر البطاقات في الهاتف ويعرضها كشبكة! */
+        grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fighter-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fighter-card:hover {
+    transform: translateY(-5px);
+    border-color: #e63946;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px; /* توحيد طول الصور لتكون متناسقة */
+    object-fit: cover;
+    border-bottom: 2px solid #333;
+}
+
+.card-info {
+    padding: 12px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+
+
+/* =========================================
+   نافذة العرض المنبثقة (Modal)
+========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* تغيير لليسار لأن الموقع بالعربي */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #e63946;
+}
+
+.modal-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* =========================================
+   التذييل (Footer)
+========================================= */
+.footer {
+    background-color: #000;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #222;
+}
+
+/* =========================================
+   استجابة شاشات الهاتف (Mobile Responsiveness)
+========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .nav-links {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    
+    /* تصغير البطاقات أكثر في الشاشات الصغيرة جداً */
+    .fighters-grid {
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px;
+        padding: 0 10px;
+    }
+    
+}
+
+/* =========================================
+   صالة الأبطال (Fighters Section) - الشبكة المعدلة
+========================================= */
+.fighters-grid {
+    display: grid;
+    /* في شاشات الكمبيوتر: يعرض 4 أو 5 بطاقات */
+        grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* باقي إعدادات البطاقة كما هي لديك */
+.fighter-card {
+    background: #151515;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fighter-card:hover {
+    transform: translateY(-5px);
+    border-color: #e63946;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+}
+
+.card-img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-bottom: 2px solid #333;
+}
+
+.card-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.card-info span {
+    font-size: 13px;
+    color: #e63946;
+    font-weight: bold;
+}
+
+/* =========================================
+   استجابة شاشات الهاتف (الحل الجذري لمشكلة العرض)
+========================================= */
+@media (max-width: 768px) {
+    .fighters-grid {
+        /* السطر السحري: إجبار الشاشة على عرض بطاقتين بجوار بعضهما */
+        /* إذا أردت 3 بطاقات صغيرة جداً، غير الرقم 2 إلى 3 */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .card-img {
+        /* تقصير طول الصورة في الهاتف لتتناسب مع العرض الجديد */
+        height: 130px; 
+    }
+    
+    .card-info {
+        padding: 8px;
+    }
+
+    .card-info h3 {
+        font-size: 13px; /* تصغير الخط قليلاً للهاتف */
+    }
+
+    .card-info span {
+        font-size: 11px;
+    }
+}

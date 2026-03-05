@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أكاديمية القادسية للفنون القتالية</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">🥋 أكاديمية القادسية</div>
+        <ul class="nav-links">
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#programs">البرامج التدريبية</a></li>
+            <li><a href="#fighters-section">صالة الأبطال</a></li>
+            <li><a href="#contact">انضم إلينا</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>اصنع نسختك الأقوى</h1>
+            <p>تدرب مع نخبة الأبطال في الفنون القتالية، وابدأ رحلتك نحو الحزام الأسود اليوم.</p>
+            <a href="#contact" class="cta-button">ابدأ التدريب الآن</a>
+        </div>
+    </section>
+
+    <section id="programs" class="programs-section">
+        <div class="section-title">
+            <h2>برامجنا التدريبية</h2>
+            <p>اختر الفن القتالي الذي يناسب شغفك</p>
+        </div>
+        <div class="programs-grid">
+            <div class="program-card">
+                <h3>الكاراتيه (شوتوكان)</h3>
+                <p>تأسيس قوي، مرونة، وتقنيات دفاعية وهجومية متكاملة.</p>
+            </div>
+            <div class="program-card">
+                <h3>الدفاع عن النفس</h3>
+                <p>تعلم كيف تحمي نفسك في المواقف الواقعية بأساليب عملية.</p>
+            </div>
+            <div class="program-card">
+                <h3>اللياقة البدنية</h3>
+                <p>رفع مستوى التحمل، القوة الانفجارية، وتجهيز المقاتلين للبطولات.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="fighters-section" class="fighters-section">
+        <div class="section-title">
+            <h2>صالة الأبطال</h2>
+            <p>تعرف على نخبة مقاتلي الأكاديمية وإنجازاتهم</p>
+        </div>
+        <div id="fighters-container" class="fighters-grid"></div>
+    </section>
+
+    <div id="fighter-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <footer id="contact" class="footer">
+        <p>أكاديمية القادسية للفنون القتالية © 2024 - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
