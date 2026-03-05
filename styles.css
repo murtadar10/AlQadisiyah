@@ -1,0 +1,107 @@
+        /* --- 1. أساسيات التصميم (Global Styles) --- */
+        :root {
+            --primary: #d32f2f;       /* الأحمر القاني */
+            --dark: #0a0a0a;          /* الأسود */
+            --card-bg: #151515;       /* رمادي داكن */
+            --text: #ffffff;
+            --gold: #ffd700;          /* ذهبي للإنجازات */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--dark); color: var(--text); overflow-x: hidden; }
+
+        /* --- 2. شريط التنقل (Navbar) --- */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(0,0,0,0.9); padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--primary);
+            backdrop-filter: blur(10px);
+        }
+        .logo { font-size: 1.5rem; font-weight: 900; color: #fff; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #fff; font-weight: 600; transition: 0.3s; font-size: 1rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- 3. الواجهة الرئيسية (Hero Section) --- */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1544367563-12123d815d19?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            padding: 20px;
+        }
+        .hero h1 { font-size: 4rem; margin-bottom: 10px; text-shadow: 0 0 20px rgba(0,0,0,0.8); line-height: 1.2; }
+        .hero .slogan { font-size: 1.8rem; color: var(--gold); margin-bottom: 20px; font-weight: bold; letter-spacing: 1px; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin-bottom: 40px; color: #ddd; }
+        
+        .cta-btn {
+            padding: 15px 40px; background: var(--primary); color: #fff; text-decoration: none;
+            font-size: 1.2rem; font-weight: bold; border-radius: 5px; transition: 0.3s;
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.4); border: none; cursor: pointer;
+        }
+        .cta-btn:hover { background: #b71c1c; transform: translateY(-3px); }
+
+        /* --- 4. من نحن والإنجازات (About & Stats) --- */
+        section { padding: 80px 10%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--primary); margin: 15px auto; }
+
+        .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center; }
+        .about-text h3 { font-size: 2rem; margin-bottom: 20px; color: var(--primary); }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
+        
+        /* عداد الإنجازات */
+        .stats-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;
+            margin-top: 40px; text-align: center;
+        }
+        .stat-box { background: var(--card-bg); padding: 20px; border-radius: 10px; border: 1px solid #333; }
+        .stat-number { font-size: 2.5rem; font-weight: 900; color: var(--gold); display: block; }
+        .stat-label { font-size: 1rem; color: #aaa; }
+
+        /* --- 5. قسم اللاعبين (Fighters) - كما هو --- */
+        .fighters-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .fighter-card { background: var(--card-bg); border-radius: 10px; overflow: hidden; cursor: pointer; transition: 0.3s; border: 1px solid #333; position: relative; }
+        .fighter-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card-img { height: 320px; width: 100%; object-fit: cover; }
+        .card-info { padding: 15px; text-align: center; }
+        .card-info h3 { color: #fff; margin-bottom: 5px; }
+        .card-info span { color: var(--primary); font-size: 0.9rem; }
+
+        /* --- 6. النوافذ المنبثقة (Modals) --- */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: 0.3s; padding: 20px; }
+        .modal.active { opacity: 1; visibility: visible; }
+        .modal-content { background: #111; width: 100%; max-width: 900px; display: flex; border: 1px solid var(--primary); position: relative; max-height: 90vh; overflow-y: auto; }
+        .close-icon { position: absolute; top: 10px; left: 15px; color: #fff; font-size: 2rem; cursor: pointer; z-index: 10; background: rgba(0,0,0,0.5); padding: 0 10px; border-radius: 5px; }
+
+        /* نافذة اللاعب */
+        .video-box { flex: 1.5; background: #000; min-height: 300px; }
+        .video-box video { width: 100%; height: 100%; object-fit: cover; }
+        .info-box { flex: 1; padding: 30px; }
+        .stat-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .skill-bar { margin-top: 15px; }
+        .progress { height: 6px; background: #333; border-radius: 3px; margin-top: 5px; }
+        .fill { height: 100%; background: var(--primary); width: 0%; transition: 1s; }
+
+        /* نافذة الواتساب */
+        .whatsapp-form { background: #1a1a1a; padding: 40px; max-width: 450px; width: 100%; border-radius: 10px; border-top: 5px solid #25D366; text-align: center; }
+        .form-input { width: 100%; padding: 12px; margin: 10px 0; background: #333; border: 1px solid #444; color: #fff; border-radius: 5px; }
+        .wa-btn { width: 100%; padding: 12px; background: #25D366; color: #fff; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 1.1rem; }
+        .wa-btn:hover { background: #20b857; }
+
+        /* --- 7. التجاوب (Mobile) --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero .slogan { font-size: 1.4rem; }
+            .nav-links { display: none; } /* إخفاء الروابط في الموبايل للتبسيط */
+            .modal-content { flex-direction: column; }
+            .video-box { height: 250px; flex: none; }
+            section { padding: 60px 5%; }
+            .stats-container { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 20px; background: #050505; color: #777; font-size: 0.9rem; border-top: 1px solid #222; }
