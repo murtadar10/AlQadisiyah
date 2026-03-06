@@ -28,7 +28,6 @@ const fighters = [
     video: "videos/IMG_9713.MOV",
   },
 
-  
   {
     id: 3,
     name: "عبد الله راتب",
